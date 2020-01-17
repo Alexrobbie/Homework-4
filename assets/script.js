@@ -60,31 +60,38 @@ var t=setInterval(function () {
     if(qNum>q.length-1) {
         clearInterval(t);
         var name=prompt("Your Score is "+time+". Please enter your Initials")
-        var score= [name,time];
-        var highscore=window.localStorage.getItem('NewScore');
-        highscore=JSON.parse(highscore);
-        score.push(highscore);
-        window.localStorage.setItem('NewScore',JSON.stringify(score));
-        window.location.href="assets/highscore.html";
+        var highscore=[name,time];
+        //window.localStorage.setItem('New',JSON.stringify(score));
+        if(window.localStorage.getItem('i')!=null) {
+          var i=JSON.parse(window.localStorage.getItem('i'))
+          window.localStorage.setItem(JSON.stringify(i),JSON.stringify(highscore))
+          i++
+          window.localStorage.setItem('i',JSON.stringify(i));
+        }
+        else {
+            var i=1;
+            window.localStorage.setItem(JSON.stringify(i),JSON.stringify(highscore));
+            window.localStorage.setItem('i',"1");
+        }
+       
+
+        
+
+        
+        
+
+        window.location.href="assets/highscore.html"; 
+        
     }
 }, 1000);
 }
 //Print out Highscore
 function printHS() {
-var highscore=window.localStorage.getItem('NewScore');
-highscore=JSON.parse(highscore);
-var q=2;
-var a=[];
-for (i=0;i<highscore.length;i=i+2) {
-a=highscore.slice(i,q)
-a=JSON.stringify(a);
-$("#HS").append("<div class=hs>"+a+"</div>");
-q++;
-q++;
-}
-
-
-
+    x=JSON.parse(window.localStorage.getItem('i'));
+    for (i=1;i<x;i++) {
+       a=window.localStorage.getItem(JSON.stringify(i));
+    $("#HS").append("<div class=hs>"+a+"</div>");
+    }
 
 }
 printHS();
