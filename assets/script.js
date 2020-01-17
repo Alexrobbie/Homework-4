@@ -61,16 +61,29 @@ var t=setInterval(function () {
         clearInterval(t);
         var name=prompt("Your Score is "+time+". Please enter your Initials")
         var score= [name,time];
-        window.localStorage.setItem('score',JSON.stringify(score));
+        var highscore=window.localStorage.getItem('NewScore');
+        highscore=JSON.parse(highscore);
+        score.push(highscore);
+        window.localStorage.setItem('NewScore',JSON.stringify(score));
         window.location.href="assets/highscore.html";
     }
 }, 1000);
 }
 //Print out Highscore
 function printHS() {
-var highscore=window.localStorage.getItem('score');
-console.log(highscore);
-$("#HS").append("<div class=hs>"+highscore+"</div>");
+var highscore=window.localStorage.getItem('NewScore');
+highscore=JSON.parse(highscore);
+var q=2;
+var a=[];
+for (i=0;i<highscore.length;i=i+2) {
+a=highscore.slice(i,q)
+a=JSON.stringify(a);
+$("#HS").append("<div class=hs>"+a+"</div>");
+q++;
+q++;
+}
+
+
 
 
 }
