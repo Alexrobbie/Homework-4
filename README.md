@@ -1,1 +1,2 @@
 # Homework-4
+This code takes user button clicks and compaires them to the answer to the question. if wrong, 5 seconds is subtracted. after the quiz, the user is prompted to enter their initials, which are used with the time remaining as the score. the user is than redirected to the Highscore page
