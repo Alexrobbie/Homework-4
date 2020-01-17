@@ -1,0 +1,52 @@
+#start {
+    text-align: center;
+    background-color:teal;
+    color: white;
+    padding: 12% 24%;
+    display: inline-block;
+    font-size: 32px;
+    border-color: slategrey;
+    
+}
+#startDiv {
+    position: fixed;
+    bottom: 50%;
+    right: 50%;
+}
+body {
+    background-color: silver;
+}
+#time {
+    position: fixed;
+    top: 10%;
+    right: 90%
+}
+#text {
+   text-align: center;
+    color: black;
+    font-size: 20px;
+}
+#HS {
+    position: fixed;
+    right:30%;
+    top: 5%;
+    background-color: rgba(100, 148, 237, 0.384);
+    width: 40%;
+}
+.text {
+    position: fixed;
+    top: 20%;
+    left:21%;
+}
+.button {
+    position: fixed;
+    left:21%;
+    background-color:rgb(108, 224, 97);
+    color:white;
+}
+#rw {
+    position: fixed;
+    top: 30%;
+    left: 40%;
+
+}
